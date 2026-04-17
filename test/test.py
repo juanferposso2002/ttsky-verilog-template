@@ -31,4 +31,4 @@ async def test_project(dut):
         dut.ui_in.value = 0b00000001
         await Timer(10, units="us")
 
-        dut._log.info(f"Count = {dut.uo_out.value}")
+        dut._log.info(f"Count = {dut.uo_out.value}") 
