@@ -9,18 +9,18 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-This design implements a 4-bit synchronous counter.
-The counter increments its value on every rising edge of the clock signal. 
-When reset (rst_n) is low, the counter is cleared to 0.
-The counter output is mapped to uo_out[3:0].
+The circuit uses a 2-bit counter to generate a repeating sequence of states that act as timing steps. A combinational controller routes this sequence to the left lights, right lights, both, or neither based on the blinker input, and the decoders transform each state into a progressive 3-bit pattern that creates the sequential lighting effect (similar to the Ford Thunderbird).
 
 ## How to test
 
 Apply reset (rst_n = 0) to initialize the counter.
 Release reset (rst_n = 1).
-Toggle ui_in[0] to generate a clock signal.
-Observe the output on uo_out[3:0].
-The output should increment in binary: 0000 → 0001 → 0010 → ... → 1111 → 0000
+Set blinker to each value (00, 01, 10, 11) and observe outputs:
+00 → both outputs off
+01 → left sequence active
+10 → right sequence active
+11 → both sequences active
+Run the simulation for several clock cycles and confirm the outputs follow the expected progression
 
 ## External hardware
 

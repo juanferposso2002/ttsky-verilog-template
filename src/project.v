@@ -16,23 +16,29 @@ module tt_um_example (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-  // Instancia Active High Reset
+  // Active High Reset Instance
   wire rst ;
   assign rst = ~rst_n ;
-  
-  // Instancia salida del contador
-  wire [3:0] count;
 
-  // Instancia del Contador
-  contador my_counter(.clk(clk), .rst(rst), .count(count));
+  // Top Module Wires
+  wire [1:0] blinker;
+  wire [2:0] left;
+  wire [2:0] right;
+
+  // Input Pin Assignation
+  assign blinker = ui_in[1:0];
+
+  // Top Module Instance
+  top thunder(.clk(clk), .rst(rst), .blinker(blinker), .left(left), .right(right));
 
   // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out[3:0] = count;
-  assign uo_out[7:4] = 4'b0000;
+  assign uo_out[2:0] = left;
+  assign uo_out[5:3] = right;
+  assign uo_out[7:6] = 2'b00;
   assign uio_out = 0;
   assign uio_oe  = 0;
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, ui_in, uio_in, 1'b0};
+  wire _unused = &{ena, ui_in[7:2], uio_in, 1'b0};
 
 endmodule

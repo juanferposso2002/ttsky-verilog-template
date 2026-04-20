@@ -1,10 +1,10 @@
 project:
-  title:        "4-bit Counter"
-  author:       "JF Posso"
+  title:        "Ford Thunderbird Rearlights Controller"
+  author:       "Juan Fernando Posso & Pierina Miraba"
   discord:      "" 
-  description:  "A simple 4-bit synchronous counter"
+  description:  "The circuit implements a sequential rear-light controller inspired by the Ford Thunderbird, using a 2-bit counter to generate timing states. A controller and decoders convert these states into progressive left and right light patterns based on the input signal."
   language:     "Verilog"
-  clock_hz:     1000000
+  clock_hz:     1.5
 
   tiles: "1x1"
 
@@ -12,12 +12,12 @@ project:
 
   source_files:
     - "project.v"
-    - "counter.v"
+    - "thunderbird.v"
 
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
+  ui[0]: "blinker[0]"
+  ui[1]: "blinker[1]"
   ui[2]: ""
   ui[3]: ""
   ui[4]: ""
@@ -26,12 +26,12 @@ pinout:
   ui[7]: ""
 
   # Outputs
-  uo[0]: "count[0]"
-  uo[1]: "count[1]"
-  uo[2]: "count[2]"
-  uo[3]: "count[3]"
-  uo[4]: ""
-  uo[5]: ""
+  uo[0]: "left[0]"
+  uo[1]: "left[1]"
+  uo[2]: "left[2]"
+  uo[3]: "right[0]"
+  uo[4]: "right[1]"
+  uo[5]: "right[2]"
   uo[6]: ""
   uo[7]: ""
 
