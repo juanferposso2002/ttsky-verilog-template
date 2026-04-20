@@ -4,7 +4,7 @@ project:
   discord:      "" 
   description:  "The circuit implements a sequential rear-light controller inspired by the Ford Thunderbird, using a 2-bit counter to generate timing states. A controller and decoders convert these states into progressive left and right light patterns based on the input signal."
   language:     "Verilog"
-  clock_hz:     1.5
+  clock_hz:     2
 
   tiles: "1x1"
 
