@@ -1,5 +1,5 @@
 project:
-  title:        "Ford Thunderbird Rearlights Controller"
+  title:        "Ford Thunderbird Rearlights Controller - IEEE OpenSilicon Bootcamp"
   author:       "Juan Fernando Posso & Pierina Miraba"
   discord:      "" 
   description:  "The circuit implements a sequential rear-light controller inspired by the Ford Thunderbird, using a 2-bit counter to generate timing states. A controller and decoders convert these states into progressive left and right light patterns based on the input signal."
@@ -8,7 +8,7 @@ project:
 
   tiles: "1x1"
 
-  top_module:  "tt_um_example"
+  top_module:  "thunder"
 
   source_files:
     - "project.v"

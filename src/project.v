@@ -5,7 +5,7 @@
 
 `default_nettype none
 
-module tt_um_example (
+module thunder (
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
@@ -29,7 +29,7 @@ module tt_um_example (
   assign blinker = ui_in[1:0];
 
   // Top Module Instance
-  top thunder(.clk(clk), .rst(rst), .blinker(blinker), .left(left), .right(right));
+  top tp1(.clk(clk), .rst(rst), .blinker(blinker), .left(left), .right(right));
 
   // All output pins must be assigned. If not used, assign to 0.
   assign uo_out[2:0] = left;
